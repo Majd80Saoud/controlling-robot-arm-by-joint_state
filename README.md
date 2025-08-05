@@ -16,20 +16,24 @@ sudo apt-get update && sudo apt-get install -y \
   ros-humble-gazebo-ros2-control
 
   ## Build the Workspace
+  
   cd ~/ros2_ws
 colcon build
 source install/setup.bash
 
 ## Manual Fixes Applied
+
 In order to make the robot arm appear and be controllable inside RViz2, the following changes were applied:
 
 ### 1. Fixed Frame
+
  • Changed from: map
  • To: world
- • 📍 This avoids the error:
+ • This avoids the error:
 Global Status: Frame 'map' does not exist
 
 ### 2. Robot Description
+
  • Added the RobotModel display in RViz:
  • Go to Add > select RobotModel
  • Ensure the correct topic is set
